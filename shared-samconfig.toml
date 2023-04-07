@@ -1,0 +1,12 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "osimessagingsystem-saas"
+s3_bucket = "osimessagingsystem-cli-ujwbuket"
+s3_prefix = "osimessagingsystem-saas"
+region = "us-east-1"
+confirm_changeset = false
+capabilities = "CAPABILITY_NAMED_IAM CAPABILITY_AUTO_EXPAND"
+cached="true"
+parallel="true"
