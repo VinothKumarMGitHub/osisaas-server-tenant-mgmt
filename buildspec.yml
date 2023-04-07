@@ -19,8 +19,8 @@ phases:
       - sam build -t shared-template.yaml
   post_build:
     commands:
-      - sam package --s3-bucket $PACKAGE_BUCKET --output-template-file packaged-template.yml
-      
+      - sam package --s3-bucket osi-saas-tenant-mgmt-bucket --output-template-file packaged-template.yml
+
 artifacts:
   files:
     - packaged-template.yml
