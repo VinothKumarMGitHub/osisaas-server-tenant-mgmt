@@ -11,15 +11,16 @@ phases:
       - python -m pip install -r requirements.txt 
       - cd ../TenantManagementService
       - python -m pip install -r requirements.txt 
+      - cd ..
     runtime-versions:
         python: 3.8
   build:
     commands:
       # Use Build phase to build your artifacts (compile, etc.)
-      - sam build -t shared-template.yaml
+      - sam build -t shared-template.yaml  --use-container
   post_build:
     commands:
-      - sam package --s3-bucket osi-saas-tenant-mgmt-bucket --output-template-file packaged-template.yml
+      - sam package --s3-bucket osi-saas-tenant-mgmt-bucket --output-template-file packaged-template.yml 
 
 artifacts:
   files:
