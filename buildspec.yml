@@ -1,11 +1,26 @@
 version: 0.2
 phases:
   install:
+    commands:
+      # Install packages or any pre-reqs in this phase.
+      # Upgrading SAM CLI to 1.33.0 version
+      - python -m pip install aws-sam-cli==1.33.0
+      - sam --version
+      # Installing project dependencies
+      - cd Resources
+      - python -m pip install -r requirements.txt 
+      - cd ../TenantManagementService
+      - python -m pip install -r requirements.txt 
     runtime-versions:
         python: 3.8
   build:
     commands:
-      - sam package --template-file shared-template.yaml --s3-bucket osi-saas-server-tenant-mgmt --output-template-file packaged-template.yml
+      # Use Build phase to build your artifacts (compile, etc.)
+      - sam build -t shared-template.yaml
+  post_build:
+    commands:
+      - sam package --s3-bucket $PACKAGE_BUCKET --output-template-file packaged-template.yml
+      
 artifacts:
   files:
     - packaged-template.yml
