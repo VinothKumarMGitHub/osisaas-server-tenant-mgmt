@@ -1,6 +1,2 @@
-<<<<<<< HEAD
 requests
-=======
-requests
->>>>>>> 767b24a58ec3af0eabf8ed2f920741fcf9543495
 aws_requests_auth
