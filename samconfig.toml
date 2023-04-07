@@ -1,0 +1,13 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "osi-messagingsystem-saas-5"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-1uo25zhxa4ig5"
+s3_prefix = "osi-messagingsystem-saas-5"
+region = "us-east-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_NAMED_IAM CAPABILITY_AUTO_EXPAND"
+disable_rollback = false
+parameter_overrides = "AdminEmailParameter=\"vinoth_kumarm@hotmail.com\" SystemAdminRoleNameParameter=\"SystemAdmin\" ApiKeyOperationUsersParameter=\"9a7743fa-3ae7-11eb-adc1-0242ac120002\" ApiKeyPlatinumTierParameter=\"88b43c36-802e-11eb-af35-38f9d35b2c15\" ApiKeyPremiumTierParameter=\"6db2bdc2-6d96-11eb-a56f-38f9d33cfd0f\" ApiKeyStandardTierParameter=\"b1c735d8-6d96-11eb-a28b-38f9d33cfd0f\" ApiKeyBasicTierParameter=\"daae9784-6d96-11eb-a28b-38f9d33cfd0f\" StageName=\"prod\" EventEngineParameter=\"False\" AdminUserPoolCallbackURLParameter=\"http://example.com\" TenantUserPoolCallbackURLParameter=\"http://example.com\""
+image_repositories = []
