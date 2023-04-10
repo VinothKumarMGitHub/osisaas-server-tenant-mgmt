@@ -35,7 +35,7 @@ def provision_tenant(event, context):
         logger.info(response_ddb)
 
         response_codepipeline = codepipeline.start_pipeline_execution(
-            name='serverless-saas-pipeline'
+            name='osi-msg-inventory-avails-pipeline'
         )
 
         logger.info(response_ddb)
